@@ -1,15 +1,31 @@
-# Step Image Generation
+# Visualizing Entity States in Recipes by Generating Step Images
 
-[Demo](https://jumpy-pku.github.io/Step-Image-Generation/)
+[Chengang Hu](https://aclanthology.org/people/c/chengang-hu/), [Yansong Feng](https://sites.google.com/site/ysfeng/home)
 
-## theSpruceEats Dataset
+Wangxuan Institute of Computer Technology, Peking University
 
-- `recipe_step_image_data.json`: The JSON file containing the data for the recipe step image generation task. Each key in the JSON file is a recipe ID and the value is a dictionary. Each dictionary contains the following keys:
-  - `title`: The title of the recipe.
-  - `description`: The description of the recipe.
-  - `ingredients`: A list of ingredients.
-  - `steps`: A list of steps. Each step is a dictionary containing the following keys:
-    - `text`: The text of the step.
-    - `image_path`: The image file name of the step. The image file name is the key in the `images` folder.
-  
-- `images`: The folder containing images. Download `images.tar.gz` from [Google Drive](https://drive.google.com/file/d/1z2QPO-MIdAnfM1G7M2LpLY3q-GwgQwfT/view?usp=drive_link) and extract it into `images` folder.
+![](demo_imgs/example.jpg)
+
+## Abstract
+
+Procedural texts, such as recipes and instruction manuals, are crucial for understanding processes involving multiple entities over time. Entity state tracking, which monitors the states of specific entities at each time step, is a key task in this domain. However, existing benchmarks heavily rely on manually annotated datasets, limiting scalability. We propose a novel task of step image generation in recipes, using step images as visual supervision for tracking entity states in procedural text without relying on manually annotated data. By generating step images, we can visualize the entity states in each step. For this task, we collect high-quality multimodal recipe datasets, theSpruceEats. Addressing the limitation of existing two-stage methods in achieving deep interaction between text and image, this paper introduces an explicit state modeling approach based on multimodal generative models. Experiments on theSpruceEats dataset demonstrate that our method enhance entity state tracking and image generation quality compared to existing methods, improving the CLIP similarity metric by 10.2% compared to existing methods.
+
+## Method
+
+The following image illustrate proposed methods. On the top left, the single-step image generation method generates images based on the textual descriptions of a recipe and the corresponding steps. On the top right, the step-by-step image generation method incorporates previous steps and their images to produce the current step's image. At the bottom, the explicit state modeling approach enhances image generation by first generating an image caption which describes entity states before creating the final image.
+
+![](demo_imgs/method.jpg)
+
+## Cases
+
+### Single-step v.s. Step-by-step
+
+![](demo_imgs/quality1.jpg)
+
+### Explicit Entity Modeling
+
+![](demo_imgs/quality.jpg)
+
+### Comparison of Base Models
+
+![](demo_imgs/quality2.jpg)
