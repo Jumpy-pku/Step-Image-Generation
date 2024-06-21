@@ -36,3 +36,8 @@ In the single-step method, LaVIT captures details better. However, with explicit
 
 ![](demo_imgs/quality2.jpg)
 
+### Bad Cases
+
+Unresolved difficulties: (a) correctly generating multiple entities; (b) correctly generating mixtures; (c) correctly generating ingredient quantities
+
+![](demo_imgs/bad.jpg)
