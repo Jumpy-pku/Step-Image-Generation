@@ -20,12 +20,19 @@ The following image illustrate proposed methods. On the top left, the single-ste
 
 ### Single-step v.s. Step-by-step
 
+Step-by-step image generation method better retains information from earlier step images.
+
 ![](demo_imgs/quality1.jpg)
 
 ### Explicit Entity Modeling
+
+The advantages of explicit entity modeling include: (a) correct entity states; (b) No missing entities; (c) High image quality.
 
 ![](demo_imgs/quality.jpg)
 
 ### Comparison of Base Models
 
+In the single-step method, LaVIT captures details better. However, with explicit entity modeling, SEED-LLaMA generates more accurate captions, resulting in better step images.
+
 ![](demo_imgs/quality2.jpg)
+
